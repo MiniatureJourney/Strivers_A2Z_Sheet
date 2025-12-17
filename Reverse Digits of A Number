@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("Enter the number:");
+        int num = scan.nextInt();
+
+        int original = num;
+        int digit = 0;
+        int rev = 0;
+
+        int tempNum = num;
+        while (tempNum != 0) {
+            tempNum /= 10;
+            digit++;
+        }
+
+        System.out.println("The number of digits are " + digit);
+
+      
+        while (num != 0) {
+            int temp = num % 10;
+            rev = rev * 10 + temp;
+            num /= 10;
+        }
+
+        System.out.println("The reverse number is " + rev);
+
+
+    }
+}
