@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        System.out.println("Enter the Nth natural number:");
+        int n = obj.nextInt();
+        muly(n, 1);
+    }
+
+    public static void muly(int n, int mul) {
+        if (n == 0) {
+            System.out.println("mul = " + mul);
+            return;
+        }
+   
+        muly(n - 1, mul*n);
+    }
+}
