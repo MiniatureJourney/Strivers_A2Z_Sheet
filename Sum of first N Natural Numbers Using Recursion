@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        System.out.println("Enter the Nth natural number:");
+        int n = obj.nextInt();
+        summy(n, 0);
+    }
+
+    public static void summy(int n, int sum) {
+        if (n == 0) {
+            System.out.println("Sum = " + sum);
+            return;
+        }
+        sum=sum+n;
+        summy(n - 1, sum);
+    }
+}
