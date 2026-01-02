@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        System.out.print("Enter the number of times the name is to be repeated"+" ");
+        int max = obj.nextInt();
+        int n=1;
+        print(n,max);
+    }
+
+    public static void print(int n,int max) {
+     
+        if (n > max) {
+            return; 
+        }
+
+        System.out.println(n);
+        print(n + 1,max); 
+    }
+}
