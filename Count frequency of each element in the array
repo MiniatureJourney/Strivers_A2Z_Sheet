@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int max = 5;
+        int count;
+        int[] arr = new int[max];
+
+        System.out.println("Enter the array");
+        for (int i = 0; i < max; i++) {
+            arr[i] = obj.nextInt();
+        }
+
+        for (int i = 0; i < max; i++) {
+
+            
+            boolean alreadyCounted = false;
+            for (int k = 0; k < i; k++) {
+                if (arr[i] == arr[k]) {
+                    alreadyCounted = true;
+                    break;
+                }
+            }
+
+            if (alreadyCounted)
+                continue;
+
+            count = 0;
+            for (int j = 0; j < max; j++) {
+                if (arr[i] == arr[j]) {
+                    count++;
+                }
+            }
+
+            System.out.println("the number " + arr[i] + " appeared " + count + " times in the array");
+        }
+    }
+}
