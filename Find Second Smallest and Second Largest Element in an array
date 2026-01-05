@@ -1,0 +1,34 @@
+// The following solution is done by brute force and is not optimal 
+
+import java.util.Scanner;
+import java.util.Arrays;
+
+class Main {
+    public static void main(String[] args) {
+ Scanner obj = new Scanner(System.in);
+ int max=8;
+ int[] arr=new int[max];
+ System.out.println("Enter the array ");
+ for(int i=0;i<max;i++)
+ {
+     arr[i]=obj.nextInt();
+ }
+ 
+ for(int i=0;i<max;i++)
+ {
+     for(int j=0;j<max;j++)
+     {
+         if(arr[i]<arr[j])
+         {
+             int temp=arr[j];
+             arr[j]=arr[i];
+             arr[i]=temp;
+         }
+     }
+ }
+ System.out.println("The second smallest element is the array is "+arr[1]);
+ System.out.println("The second largest element is the array is "+arr[7]);
+ 
+ 
+    }
+}
