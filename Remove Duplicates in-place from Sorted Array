@@ -1,0 +1,32 @@
+import java.util.Scanner;
+import java.util.Arrays;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+
+        int max = 8;
+        int[] arr = new int[max];
+
+        System.out.println("Enter the array:");
+        for (int i = 0; i < max; i++) {
+            arr[i] = obj.nextInt();
+        }
+
+        Arrays.sort(arr);
+
+        int index = 1; 
+
+        for (int i = 1; i < max; i++) {
+            if (arr[i] != arr[index - 1]) {
+                arr[index] = arr[i];
+                index++;
+            }
+        }
+
+        System.out.print("The non duplicated array is: ");
+        for (int i = 0; i < index; i++) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+}
